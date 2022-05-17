@@ -1,6 +1,10 @@
 // On importe le package express
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
+
+const userRoutes = require('./routes/user');
+// const stuffRoutes = require('./routes/stuff');
 
 mongoose.connect('mongodb+srv://valencore:Silvain67@cluster0.x0drv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     {
@@ -20,5 +24,11 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+// app.use('/api/sauces', stuffRoutes);
+app.use('/api/auth', userRoutes);
+
 // on exporte l'application pour pouvoir l'utiliser notamment dans le server node
 module.exports = app;
