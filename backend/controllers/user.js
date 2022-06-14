@@ -31,7 +31,7 @@ exports.signup = (req, res, next) => {
               userId: user._id,
               token: jwt.sign(
                 { userId: user._id },
-                '${process.env.SECRET_KEY}',
+                `${process.env.SECRET_KEY}`,
                 { expiresIn: '24h' }
               )
             });
