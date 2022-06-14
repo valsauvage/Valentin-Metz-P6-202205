@@ -1,3 +1,5 @@
+# Valentin-Metz-P6-202205
+Dépôt git pour le P6 d'OC
 # HotTakes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
